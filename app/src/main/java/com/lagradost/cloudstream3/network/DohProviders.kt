@@ -86,6 +86,18 @@ fun OkHttpClient.Builder.addQuad9Dns() = (
         )
     ))
 
+fun OkHttpClient.Builder.addQuad9EcsDns() = (
+    addGenericDns(
+        "https://dns11.quad9.net/dns-query",
+        // https://www.quad9.net/service/service-addresses-and-features
+        listOf(
+            "9.9.9.11",
+            "149.112.112.11",
+            "2620:fe::11",
+            "2620:fe::fe:11"
+        )
+    ))
+
 fun OkHttpClient.Builder.addDnsSbDns() = (
         addGenericDns(
             "https://doh.dns.sb/dns-query",
