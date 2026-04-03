@@ -63,6 +63,7 @@ fun buildDefaultClient(context: Context, ignoreSSL: Boolean = false): OkHttpClie
                 4 -> addAdGuardDns()
                 5 -> addDNSWatchDns()
                 6 -> addQuad9Dns()
+                9 -> addQuad9EcsDns()
                 7 -> addDnsSbDns()
                 8 -> addCanadianShieldDns()
             }
