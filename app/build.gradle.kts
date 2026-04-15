@@ -87,10 +87,15 @@ android {
         // so won't kill the configuration cache.
         if (System.getenv("SIGNING_KEY_ALIAS") != null) {
             create("prerelease") {
-                val tmpFilePath = System.getProperty("user.home") + "/work/_temp/keystore/"
-                val prereleaseStoreFile: File? = File(tmpFilePath).listFiles()?.first()
+                val envFile = System.getenv("PRERELEASE_STORE_FILE")
+                val storeFilePath = if (envFile != null) {
+                    file(envFile)
+                } else {
+                    val tmpFilePath = System.getProperty("user.home") + "/work/_temp/keystore/"
+                    File(tmpFilePath).listFiles()?.first()?.let { file(it) }
+                }
 
-                storeFile = prereleaseStoreFile?.let { file(it) }
+                storeFile = storeFilePath
                 storePassword = System.getenv("SIGNING_STORE_PASSWORD")
                 keyAlias = System.getenv("SIGNING_KEY_ALIAS")
                 keyPassword = System.getenv("SIGNING_KEY_PASSWORD")
