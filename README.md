@@ -1,44 +1,17 @@
 # CloudStream
+<p align="center">
+  <img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" width="150">
+</p>
 
-**⚠️ Warning: By default, this app doesn't provide any video sources; you have to install extensions to add functionality to the app.**
+## Table of Contents:
+- [Contributing](#contributing)
+- [Issues](#issues)
+- [Extensions](#extensions)
+- [Further Sources](#contact_and_sources)
 
-[![Discord](https://invidget.switchblade.xyz/5Hus6fM)](https://discord.gg/5Hus6fM)
-
-
-## Table of Contents: 
-+ [About Us:](#about_us)
-+ [Installation Steps:](#install_rules)
-+ [Contributing:](#contributing)
-+ [Issues:](#issues)
-  + [Bugs Reports:](#bug_report)
-  + [Enhancement:](#enhancment)
-+ [Extension Development:](#extensions)
-+ [Language Support:](#languages)
-+ [Further Sources](#contact_and_sources)
-
-
-<a id="about_us"></a>
-
-## About us: 
-
-**CloudStream is a media center that prioritizes and emphasizes complete freedom and flexibility for users and developers.** 
-
-CloudStream is an extension-based multimedia player with tracking support. There are extensions to view videos from: 
-
-+ [Librevox (audio-books)](https://librivox.org/) 
-+ [Youtube](https://www.youtube.com/)
-+ [Twitch](https://www.twitch.tv/)
-+ [iptv-org (A collection of publicly available IPTV (Internet Protocol television) channels from all over the world.)](https://github.com/iptv-org/iptv) 
-+ [nginx](https://nginx.org/)
-+ And more... 
-
+**CloudStream** is an Android app for streaming and downloading media.
 
 **Please don't create illegal extensions or use any that host any copyrighted media.** For more details about our stance on the DMCA and EUCD, you can read about it on our organization: [reCloudStream](https://github.com/recloudstream)
-
-#### Important Copyright Note: 
-
-Our documentation is unmaintained and open to contributions; therefore, apps and sources, extensions in recommended sources, and recommended apps are not officially moderated or endorsed by CloudStream; if you or another copyright owner identify an extension that breaches your copyright, please let us know. 
-
 
 #### Features:
 + **AdFree**, No ads whatsoever
@@ -48,14 +21,10 @@ Our documentation is unmaintained and open to contributions; therefore, apps and
 + Chromecast
 + Extension system for personal customization
 
-
-<a id="install_rules"></a>
-
-## Installation: 
-
-Our documentation provides the steps to install and configure CloudStream for your streaming needs.
-
-[Getting Started With CloudStream:](https://recloudstream.github.io/csdocs/)
+## Installation:
+1.  **Download the APK:** Head over to the [Releases](https://github.com/fam007e/cloudstream/releases) page and download the latest APK.
+2.  **Install the APK:** Open the downloaded file and follow the prompts to install.
+3.  **Trust Unknown Sources:** If prompted, allow installation from unknown sources in your device settings.
 
 <a id="contributing"></a>
 
@@ -67,17 +36,17 @@ We **happily** accept any contributions to our project. To find out where you ca
 <a id="issues"></a> 
  
 ### Issues: 
-While we **actively** accept issues and pull requests, we do require you fill out an [template](https://github.com/recloudstream/cloudstream/issues/new/choose) for issues. These include the following:
+While we **actively** accept issues and pull requests, we do require you fill out an [template](https://github.com/fam007e/cloudstream/issues/new/choose) for issues. These include the following:
 
 <a id="bug_report"></a>
 
-- [Bug Report Template: ](https://github.com/recloudstream/cloudstream/issues/new?assignees=&labels=bug&projects=&template=application-bug.yml)
+- [Bug Report Template: ](https://github.com/fam007e/cloudstream/issues/new?assignees=&labels=bug&projects=&template=application-bug.yml)
   - For bug reports, we want as much info as possible, including your downloaded version of CloudeStream, device and updated version (if possible, current API),
     expected behavior of the program, and the actual behavior that the program did, most importantly we require clear, reproducible steps of the bug. If your bug can't be       reproduced, it is unlikely we'll work on your issue.
     
 <a id="enhancment"></a>
   
-- [Feature Request Template: ](https://github.com/recloudstream/cloudstream/issues/new?assignees=&labels=enhancement&projects=&template=feature-request.yml)
+- [Feature Request Template: ](https://github.com/fam007e/cloudstream/issues/new?assignees=&labels=enhancement&projects=&template=feature-request.yml)
   - Before adding a feature request, please check to see if a feature request already has been requested.  
 
 
@@ -98,7 +67,6 @@ As well as providing clear install steps, our [website](https://dweb.link/ipns/c
   - [Android TV](https://recloudstream.github.io/csdocs/other-devices/tv/)
   - [Windows](https://recloudstream.github.io/csdocs/other-devices/windows/)
   - [Linux](https://recloudstream.github.io/csdocs/other-devices/linux/)
-- And more...
 
 <a id="languages"> </a>  
 
