@@ -100,10 +100,10 @@
         <Preference
             android:icon="@drawable/ic_baseline_discord_24"
             android:title="@string/discord"
-            app:summary="https://discord.gg/5Hus6fM">
+            app:summary="https://discord.gg/F34duNjTqn">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://discord.gg/5Hus6fM" />
+                android:data="https://discord.gg/F34duNjTqn" />
         </Preference>
         <Preference
             android:icon="@drawable/baseline_description_24"
