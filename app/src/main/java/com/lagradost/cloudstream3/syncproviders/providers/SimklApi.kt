@@ -425,9 +425,10 @@ class SimklApi : SyncAPI() {
                 suspend fun execute(): Boolean {
                     val time = getDateTime(unixTime)
                     val headers = this.headers ?: emptyMap()
+                    val query = "?client_id=$CLIENT_ID&app-name=CloudStream&app-version=${BuildConfig.VERSION_NAME}"
                     return if (this.status == SimklListStatusType.None.value) {
                         app.post(
-                            "$url/sync/history/remove",
+                            "$url/sync/history/remove$query",
                             json = StatusRequest(
                                 shows = listOf(HistoryMediaObject(ids = ids)),
                                 movies = emptyList()
@@ -442,7 +443,7 @@ class SimklApi : SyncAPI() {
                                     ?: SimklListStatusType.Watching.originalName!!
 
                             app.post(
-                                "${this.url}/sync/add-to-list",
+                                "${this.url}/sync/add-to-list$query",
                                 json = StatusRequest(
                                     shows = listOf(
                                         StatusMediaObject(
@@ -459,7 +460,7 @@ class SimklApi : SyncAPI() {
 
                         val episodeRemovalResponse = removeEpisodes?.let { (seasons, episodes) ->
                             app.post(
-                                "${this.url}/sync/history/remove",
+                                "${this.url}/sync/history/remove$query",
                                 json = StatusRequest(
                                     shows = listOf(
                                         HistoryMediaObject(
@@ -483,7 +484,7 @@ class SimklApi : SyncAPI() {
                             // Only post if there are episodes or score to upload
                             if (addEpisodes != null || shouldRate) {
                                 app.post(
-                                    "${this.url}/sync/history",
+                                    "${this.url}/sync/history$query",
                                     json = StatusRequest(
                                         shows = listOf(
                                             HistoryMediaObject(
@@ -509,8 +510,18 @@ class SimklApi : SyncAPI() {
             }
         }
 
+        fun getCommonParams(): Map<String, String> = mapOf(
+            "client_id" to CLIENT_ID,
+            "app-name" to "CloudStream",
+            "app-version" to BuildConfig.VERSION_NAME
+        )
+
         fun getHeaders(token: AuthToken): Map<String, String> =
-            mapOf("Authorization" to "Bearer ${token.accessToken}", "simkl-api-key" to CLIENT_ID)
+            mapOf(
+                "Authorization" to "Bearer ${token.accessToken}",
+                "simkl-api-key" to CLIENT_ID,
+                "User-Agent" to "CloudStream/${BuildConfig.VERSION_NAME} (${BuildConfig.APPLICATION_ID})"
+            )
 
         suspend fun getEpisodes(
             simklId: Int?,
@@ -546,7 +557,7 @@ class SimklApi : SyncAPI() {
             }
 
             debugPrint { "Requesting episodes from $url" }
-            return app.get(url, params = mapOf("client_id" to CLIENT_ID))
+            return app.get(url, params = getCommonParams())
                 .parsedSafe<Array<EpisodeMetadata>>()?.also {
                     val cacheTime =
                         if (hasEnded == true) SimklCache.CacheTimes.OneMonth.value else SimklCache.CacheTimes.ThirtyMinutes.value
@@ -764,7 +775,7 @@ class SimklApi : SyncAPI() {
     }*/
 
     private suspend fun getUser(token: AuthToken): SettingsResponse =
-        app.post("$mainUrl/users/settings", headers = getHeaders(token))
+        app.post("$mainUrl/users/settings?client_id=$CLIENT_ID&app-name=CloudStream&app-version=${BuildConfig.VERSION_NAME}", headers = getHeaders(token))
             .parsed<SettingsResponse>()
 
 
@@ -908,7 +919,7 @@ class SimklApi : SyncAPI() {
 
         return app.get(
             "$mainUrl/search/id",
-            params = mapOf("client_id" to CLIENT_ID) + serviceMap.map { (service, id) ->
+            params = getCommonParams() + serviceMap.map { (service, id) ->
                 service.originalName to id
             }
         ).parsedSafe()
@@ -916,14 +927,14 @@ class SimklApi : SyncAPI() {
 
     override suspend fun search(auth: AuthData?, query: String): List<SyncAPI.SyncSearchResult>? {
         return app.get(
-            "$mainUrl/search/", params = mapOf("client_id" to CLIENT_ID, "q" to name)
+            "$mainUrl/search/", params = getCommonParams() + mapOf("q" to query)
         ).parsedSafe<Array<MediaObject>>()?.mapNotNull { it.toSyncSearchResult() }
     }
 
     override fun loginRequest(): AuthLoginPage? {
         val lastLoginState = BigInteger(130, SecureRandom()).toString(32)
         val url =
-            "https://simkl.com/oauth/authorize?response_type=code&client_id=$CLIENT_ID&redirect_uri=$APP_STRING://${redirectUrlIdentifier}&state=$lastLoginState"
+            "https://simkl.com/oauth/authorize?response_type=code&client_id=$CLIENT_ID&app-name=CloudStream&app-version=${BuildConfig.VERSION_NAME}&redirect_uri=$APP_STRING://${redirectUrlIdentifier}&state=$lastLoginState"
 
         return AuthLoginPage(
             url = url,
@@ -934,9 +945,9 @@ class SimklApi : SyncAPI() {
     override suspend fun load(auth: AuthData?, id: String): SyncResult? = null
 
     private suspend fun getSyncListSince(auth: AuthData, since: Long?): AllItemsResponse? {
-        val params = getDateTime(since)?.let {
+        val params = getCommonParams() + (getDateTime(since)?.let {
             mapOf("date_from" to it)
-        } ?: emptyMap()
+        } ?: emptyMap())
 
         // Can return null on no change.
         return app.get(
@@ -947,7 +958,7 @@ class SimklApi : SyncAPI() {
     }
 
     private suspend fun getActivities(token: AuthToken): ActivitiesResponse? {
-        return app.post("$mainUrl/sync/activities", headers = getHeaders(token)).parsedSafe()
+        return app.post("$mainUrl/sync/activities?client_id=$CLIENT_ID&app-name=CloudStream&app-version=${BuildConfig.VERSION_NAME}", headers = getHeaders(token)).parsedSafe()
     }
 
     private fun getSyncListCached(auth: AuthData): AllItemsResponse? {
@@ -1003,8 +1014,8 @@ class SimklApi : SyncAPI() {
         val baseMap =
             SimklListStatusType.entries
                 .filter { it.value >= 0 && it.value != SimklListStatusType.ReWatching.value }
-                .associate {
-                    it.stringRes to emptyList<SyncAPI.LibraryItem>()
+                .associate<SimklListStatusType, Int, List<SyncAPI.LibraryItem>> {
+                    it.stringRes to emptyList()
                 }
 
         val syncMap = listOf(list.anime, list.movies, list.shows)
@@ -1041,7 +1052,7 @@ class SimklApi : SyncAPI() {
 
     override suspend fun pinRequest(): AuthPinData? {
         val pinAuthResp = app.get(
-            "$mainUrl/oauth/pin?client_id=$CLIENT_ID&redirect_uri=$APP_STRING://${redirectUrlIdentifier}"
+            "$mainUrl/oauth/pin?client_id=$CLIENT_ID&app-name=CloudStream&app-version=${BuildConfig.VERSION_NAME}&redirect_uri=$APP_STRING://${redirectUrlIdentifier}"
         ).parsedSafe<PinAuthResponse>() ?: return null
 
         return AuthPinData(
@@ -1055,7 +1066,7 @@ class SimklApi : SyncAPI() {
 
     override suspend fun login(payload: AuthPinData): AuthToken? {
         val pinAuthResp = app.get(
-            "$mainUrl/oauth/pin/${payload.userCode}?client_id=$CLIENT_ID"
+            "$mainUrl/oauth/pin/${payload.userCode}?client_id=$CLIENT_ID&app-name=CloudStream&app-version=${BuildConfig.VERSION_NAME}"
         ).parsedSafe<PinExchangeResponse>() ?: return null
 
         return AuthToken(
