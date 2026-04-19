@@ -16,22 +16,31 @@ val javaTarget = JvmTarget.fromTarget(libs.versions.jvmTarget.get())
 abstract class GenerateGitHashTask : DefaultTask() {
 
     @get:InputFile
+    @get:Optional
     @get:PathSensitive(PathSensitivity.RELATIVE)
     abstract val headFile: RegularFileProperty
 
     @get:InputDirectory
+    @get:Optional
     @get:PathSensitive(PathSensitivity.RELATIVE)
     abstract val headsDir: DirectoryProperty
+
+    @get:Input
+    @get:Optional
+    abstract val gitHash: Property<String>
 
     @get:OutputDirectory
     abstract val outputDir: DirectoryProperty
 
     @TaskAction
     fun generate() {
-        val head = headFile.get().asFile
-
         val hash = try {
-            if (head.exists()) {
+            val envHash = gitHash.orNull
+            val head = if (headFile.isPresent) headFile.get().asFile else null
+            
+            if (envHash != null) {
+                envHash
+            } else if (head != null && head.exists()) {
                 // Read the commit hash from .git/HEAD
                 val headContent = head.readText().trim()
                 if (headContent.startsWith("ref:")) {
@@ -42,7 +51,7 @@ abstract class GenerateGitHashTask : DefaultTask() {
             } else "" // If .git/HEAD doesn't exist
         } catch (_: Throwable) {
             "" // Just set to an empty string if any exception occurs
-        }.take(7) // Get the short commit hash
+        }.trim().take(7) // Get the short commit hash
 
         val outFile = outputDir.file("git-hash.txt").get().asFile
         outFile.parentFile.mkdirs()
@@ -55,6 +64,7 @@ val generateGitHash = tasks.register<GenerateGitHashTask>("generateGitHash") {
 
     headFile.set(gitDir.file("HEAD"))
     headsDir.set(gitDir.dir("refs/heads"))
+    gitHash.set(project.providers.systemProperty("GIT_HASH"))
 
     outputDir.set(layout.buildDirectory.dir("generated/git"))
 }
