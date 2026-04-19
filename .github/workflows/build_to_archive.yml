@@ -36,7 +36,7 @@ jobs:
       uses: gradle/actions/setup-gradle@v5
 
     - name: Run Gradle
-      run: ./gradlew assemblePrereleaseRelease
+      run: ./gradlew assemblePrereleaseRelease -DGIT_HASH=${{ steps.vars.outputs.sha_short }}
       env:
         SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
         SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
