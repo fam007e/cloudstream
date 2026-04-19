@@ -165,13 +165,18 @@ object InAppUpdater {
         }
 
         val tagResponse = parseJson<GithubTag>(app.get(tagUrl, headers = headers).text)
-        val updateCommitHash = tagResponse.githubObject.sha.trim().take(7)
-        Log.d(LOG_TAG, "Fetched GitHub tag: $updateCommitHash")
+        val updateCommitHash = tagResponse.githubObject.sha.trim()
+        val currentHash = currentCommitHash().trim()
+        Log.d(LOG_TAG, "Fetched GitHub tag: $updateCommitHash, Current: $currentHash")
+
+        // Only update if hashes are different and both exist
+        val shouldUpdate =
+            currentHash.isNotEmpty() && !updateCommitHash.startsWith(currentHash, ignoreCase = true)
 
         return Update(
-            currentCommitHash() != updateCommitHash,
+            shouldUpdate,
             foundAsset.browserDownloadUrl,
-            updateCommitHash,
+            updateCommitHash.take(7),
             found.body,
             found.nodeId
         )
