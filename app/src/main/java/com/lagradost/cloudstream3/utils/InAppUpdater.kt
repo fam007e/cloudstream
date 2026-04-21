@@ -38,8 +38,8 @@ import java.io.IOException
 import java.io.InputStreamReader
 
 object InAppUpdater {
-    private const val GITHUB_USER_NAME = "fam007e"
-    private const val GITHUB_REPO = "cloudstream"
+    private val GITHUB_USER_NAME = BuildConfig.GITHUB_USER
+    private val GITHUB_REPO = BuildConfig.GITHUB_REPO
 
     private const val PRERELEASE_PACKAGE_NAME = "com.lagradost.cloudstream3.prerelease"
     private const val LOG_TAG = "InAppUpdater"
@@ -117,7 +117,7 @@ object InAppUpdater {
         }).toList()
 
         val found = foundList.lastOrNull()
-        val foundAsset = found?.assets?.getOrNull(0)
+        val foundAsset = found?.assets?.firstOrNull { it.contentType == "application/vnd.android.package-archive" }
         val foundVersion = foundAsset?.name?.let { versionRegex.find(it) }
 
         if (foundVersion == null) {
@@ -159,13 +159,13 @@ object InAppUpdater {
             app.get(releaseUrl, headers = headers).text
         ).toList()
 
-        val found = response.lastOrNull { rel ->
-            rel.prerelease || rel.tagName == "pre-release"
+        val found = response.find { rel ->
+            rel.tagName == "pre-release" || rel.prerelease
         }
 
-        val foundAsset = found?.assets?.filter { it ->
+        val foundAsset = found?.assets?.firstOrNull { it ->
             it.contentType == "application/vnd.android.package-archive"
-        }?.getOrNull(0)
+        }
 
         if (foundAsset == null) {
             return Update(false, null, null, null, null)
