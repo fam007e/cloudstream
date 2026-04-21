@@ -133,6 +133,16 @@ android {
         )
         buildConfigField(
             "String",
+            "GITHUB_USER",
+            "\"fam007e\""
+        )
+        buildConfigField(
+            "String",
+            "GITHUB_REPO",
+            "\"cloudstream\""
+        )
+        buildConfigField(
+            "String",
             "SIMKL_CLIENT_ID",
             "\"" + (System.getenv("SIMKL_CLIENT_ID") ?: localProperties["simkl.id"]) + "\""
         )
