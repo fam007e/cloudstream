@@ -42,7 +42,7 @@
         </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
-                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":app/main">jvm</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":app/prereleaseDebug">JVM</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
                 <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
@@ -53,9 +53,9 @@
                     </div>
                         <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":app/main" data-filter=":app/main">
+                                <input type="checkbox" class="checkbox--input" id=":app/prereleaseDebug" data-filter=":app/prereleaseDebug">
                                 <span class="checkbox--icon"></span>
-                                jvm
+                                JVM
                             </label>
                         </li>
                 </ul>
@@ -89,28 +89,28 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="classlike" id="content" pageids="App::com.lagradost.cloudstream3.ui/BaseDiffCallback///PointingToDeclaration//-1319486001">
+<div class="main-content" data-page-type="classlike" id="content" pageids="App::com.lagradost.cloudstream3.ui/BaseDiffCallback///PointingToDeclaration//-1280901913">
   <div class="breadcrumbs"><a href="../../index.html">App</a><span class="delimiter">/</span><a href="../index.html">com.lagradost.cloudstream3.ui</a><span class="delimiter">/</span><span class="current">BaseDiffCallback</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Base</span><wbr><span>Diff</span><wbr><span><span>Callback</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">BaseDiffCallback</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>itemSame<span class="token operator">: </span><span class="token punctuation">(</span><a href="index.html">T</a><span class="token punctuation">, </span><a href="index.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span>{ a, b -&gt; a.hashCode() == b.hashCode() }<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>contentSame<span class="token operator">: </span><span class="token punctuation">(</span><a href="index.html">T</a><span class="token punctuation">, </span><a href="index.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span>{ a, b -&gt; a.hashCode() == b.hashCode() }</span></span><span class="token punctuation">)</span> : <a href="https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/DiffUtil.ItemCallback.html">DiffUtil.ItemCallback</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator">&gt; </span><span class="source-link-wrapper"><span class="source-link" data-element-type="source-link">(<a href="https://github.com/fam007e/cloudstream/tree/master/app/src/main/java/com/lagradost/cloudstream3/ui/BaseAdapter.kt#L320">source</a>)</span></span></div></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/prereleaseDebug"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">BaseDiffCallback</a><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>itemSame<span class="token operator">: </span><span class="token punctuation">(</span><a href="index.html">T</a><span class="token punctuation">, </span><a href="index.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span>{ a, b -&gt; a.hashCode() == b.hashCode() }<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>contentSame<span class="token operator">: </span><span class="token punctuation">(</span><a href="index.html">T</a><span class="token punctuation">, </span><a href="index.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span>{ a, b -&gt; a.hashCode() == b.hashCode() }</span></span><span class="token punctuation">)</span> : <span data-unresolved-link="androidx.recyclerview.widget/DiffUtil.ItemCallback///PointingToDeclaration/">DiffUtil.ItemCallback</span><span class="token operator">&lt;</span><a href="index.html">T</a><span class="token operator">&gt; </span><span class="source-link-wrapper"><span class="source-link" data-element-type="source-link">(<a href="https://github.com/fam007e/cloudstream/tree/master/app/src/main/java/com/lagradost/cloudstream3/ui/BaseAdapter.kt#L320">source</a>)</span></span></div></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
         <h2 class="tableheader">Constructors</h2>
-        <div class="table"><a data-name="415298520%2FConstructors%2F-1319486001" anchor-label="BaseDiffCallback" id="415298520%2FConstructors%2F-1319486001" data-filterable-set=":app/main"></a>
-          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":app/main" data-filterable-set=":app/main">
+        <div class="table"><a data-name="415298520%2FConstructors%2F-1280901913" anchor-label="BaseDiffCallback" id="415298520%2FConstructors%2F-1280901913" data-filterable-set=":app/prereleaseDebug"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":app/prereleaseDebug" data-filterable-set=":app/prereleaseDebug">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-base-diff-callback.html"><span>Base</span><wbr><span>Diff</span><wbr><span><span>Callback</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="415298520%2FConstructors%2F-1319486001"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="415298520%2FConstructors%2F-1280901913"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">itemSame<span class="token operator">: </span><span class="token punctuation">(</span><a href="index.html">T</a><span class="token punctuation">, </span><a href="index.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span>{ a, b -&gt; a.hashCode() == b.hashCode() }<span class="token punctuation">, </span></span><span class="parameter ">contentSame<span class="token operator">: </span><span class="token punctuation">(</span><a href="index.html">T</a><span class="token punctuation">, </span><a href="index.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span>{ a, b -&gt; a.hashCode() == b.hashCode() }</span></span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/prereleaseDebug"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">itemSame<span class="token operator">: </span><span class="token punctuation">(</span><a href="index.html">T</a><span class="token punctuation">, </span><a href="index.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span>{ a, b -&gt; a.hashCode() == b.hashCode() }<span class="token punctuation">, </span></span><span class="parameter ">contentSame<span class="token operator">: </span><span class="token punctuation">(</span><a href="index.html">T</a><span class="token punctuation">, </span><a href="index.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span>{ a, b -&gt; a.hashCode() == b.hashCode() }</span></span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -119,32 +119,32 @@
       </div>
       <div data-togglable="PROPERTY">
         <h2 class="tableheader">Properties</h2>
-        <div class="table"><a data-name="652784089%2FProperties%2F-1319486001" anchor-label="contentSame" id="652784089%2FProperties%2F-1319486001" data-filterable-set=":app/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":app/main" data-filterable-set=":app/main">
+        <div class="table"><a data-name="652784089%2FProperties%2F-1280901913" anchor-label="contentSame" id="652784089%2FProperties%2F-1280901913" data-filterable-set=":app/prereleaseDebug"></a>
+          <div class="table-row table-row_content" data-filterable-current=":app/prereleaseDebug" data-filterable-set=":app/prereleaseDebug">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="content-same.html"><span>content</span><wbr><span><span>Same</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="652784089%2FProperties%2F-1319486001"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="652784089%2FProperties%2F-1280901913"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="content-same.html">contentSame</a><span class="token operator">: </span><span class="token punctuation">(</span><a href="index.html">T</a><span class="token punctuation">, </span><a href="index.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/prereleaseDebug"><div class="symbol monospace"><span class="token keyword">val </span><a href="content-same.html">contentSame</a><span class="token operator">: </span><span class="token punctuation">(</span><a href="index.html">T</a><span class="token punctuation">, </span><a href="index.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-1532555287%2FProperties%2F-1319486001" anchor-label="itemSame" id="-1532555287%2FProperties%2F-1319486001" data-filterable-set=":app/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":app/main" data-filterable-set=":app/main">
+<a data-name="-1532555287%2FProperties%2F-1280901913" anchor-label="itemSame" id="-1532555287%2FProperties%2F-1280901913" data-filterable-set=":app/prereleaseDebug"></a>
+          <div class="table-row table-row_content" data-filterable-current=":app/prereleaseDebug" data-filterable-set=":app/prereleaseDebug">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="item-same.html"><span>item</span><wbr><span><span>Same</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1532555287%2FProperties%2F-1319486001"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1532555287%2FProperties%2F-1280901913"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="item-same.html">itemSame</a><span class="token operator">: </span><span class="token punctuation">(</span><a href="index.html">T</a><span class="token punctuation">, </span><a href="index.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/prereleaseDebug"><div class="symbol monospace"><span class="token keyword">val </span><a href="item-same.html">itemSame</a><span class="token operator">: </span><span class="token punctuation">(</span><a href="index.html">T</a><span class="token punctuation">, </span><a href="index.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
                 </div>
               </div>
             </div>
@@ -153,47 +153,47 @@
       </div>
       <div data-togglable="FUNCTION">
         <h2 class="tableheader">Functions</h2>
-        <div class="table"><a data-name="1332380806%2FFunctions%2F-1319486001" anchor-label="areContentsTheSame" id="1332380806%2FFunctions%2F-1319486001" data-filterable-set=":app/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":app/main" data-filterable-set=":app/main">
+        <div class="table"><a data-name="1332380806%2FFunctions%2F-1280901913" anchor-label="areContentsTheSame" id="1332380806%2FFunctions%2F-1280901913" data-filterable-set=":app/prereleaseDebug"></a>
+          <div class="table-row table-row_content" data-filterable-current=":app/prereleaseDebug" data-filterable-set=":app/prereleaseDebug">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="are-contents-the-same.html"><span>are</span><wbr><span>Contents</span><wbr><span>The</span><wbr><span><span>Same</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1332380806%2FFunctions%2F-1319486001"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1332380806%2FFunctions%2F-1280901913"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="are-contents-the-same.html"><span class="token function">areContentsTheSame</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">oldItem<span class="token operator">: </span><a href="index.html">T</a><span class="token punctuation">, </span></span><span class="parameter ">newItem<span class="token operator">: </span><a href="index.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/prereleaseDebug"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="are-contents-the-same.html"><span class="token function">areContentsTheSame</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">oldItem<span class="token operator">: </span><a href="index.html">T</a><span class="token punctuation">, </span></span><span class="parameter ">newItem<span class="token operator">: </span><a href="index.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-793941390%2FFunctions%2F-1319486001" anchor-label="areItemsTheSame" id="-793941390%2FFunctions%2F-1319486001" data-filterable-set=":app/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":app/main" data-filterable-set=":app/main">
+<a data-name="-793941390%2FFunctions%2F-1280901913" anchor-label="areItemsTheSame" id="-793941390%2FFunctions%2F-1280901913" data-filterable-set=":app/prereleaseDebug"></a>
+          <div class="table-row table-row_content" data-filterable-current=":app/prereleaseDebug" data-filterable-set=":app/prereleaseDebug">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="are-items-the-same.html"><span>are</span><wbr><span>Items</span><wbr><span>The</span><wbr><span><span>Same</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-793941390%2FFunctions%2F-1319486001"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-793941390%2FFunctions%2F-1280901913"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="are-items-the-same.html"><span class="token function">areItemsTheSame</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">oldItem<span class="token operator">: </span><a href="index.html">T</a><span class="token punctuation">, </span></span><span class="parameter ">newItem<span class="token operator">: </span><a href="index.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/prereleaseDebug"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="are-items-the-same.html"><span class="token function">areItemsTheSame</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">oldItem<span class="token operator">: </span><a href="index.html">T</a><span class="token punctuation">, </span></span><span class="parameter ">newItem<span class="token operator">: </span><a href="index.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-126576891%2FFunctions%2F-1319486001" anchor-label="getChangePayload" id="-126576891%2FFunctions%2F-1319486001" data-filterable-set=":app/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":app/main" data-filterable-set=":app/main">
+<a data-name="-126576891%2FFunctions%2F-1280901913" anchor-label="getChangePayload" id="-126576891%2FFunctions%2F-1280901913" data-filterable-set=":app/prereleaseDebug"></a>
+          <div class="table-row table-row_content" data-filterable-current=":app/prereleaseDebug" data-filterable-set=":app/prereleaseDebug">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="get-change-payload.html"><span>get</span><wbr><span>Change</span><wbr><span><span>Payload</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-126576891%2FFunctions%2F-1319486001"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-126576891%2FFunctions%2F-1280901913"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="get-change-payload.html"><span class="token function">getChangePayload</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">oldItem<span class="token operator">: </span><a href="index.html">T</a><span class="token punctuation">, </span></span><span class="parameter ">newItem<span class="token operator">: </span><a href="index.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app/prereleaseDebug"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="get-change-payload.html"><span class="token function">getChangePayload</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">oldItem<span class="token operator">: </span><a href="index.html">T</a><span class="token punctuation">, </span></span><span class="parameter ">newItem<span class="token operator">: </span><a href="index.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></div></div></div>
                 </div>
               </div>
             </div>

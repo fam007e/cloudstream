@@ -1,1 +1,1 @@
-sourceset_dependencies = '{":app/main":[],":app/prerelease":[],":app/prereleaseRelease":[],":app/release":[],":app/stable":[],":app/stableRelease":[],":library/androidMain":[":library/commonMain"],":library/commonMain":[],":library/jvmMain":[":library/commonMain"]}'
+sourceset_dependencies = '{":app/prereleaseDebug":[],":library/androidMain":[":library/commonMain"],":library/commonMain":[],":library/jvmMain":[":library/commonMain"]}'
