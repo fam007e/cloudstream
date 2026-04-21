@@ -63,7 +63,7 @@ lifecycleViewmodelCompose = "2.11.0"
 # "Cannot inline bytecode built with JVM target 11 into bytecode" or
 # "Error was captured in composition. java.lang.AbstractMethodError"
 jvmTarget = "11"
-jdkToolchain = "17"
+jdkToolchain = "21"
 minSdk = "23"
 compileSdk = "37"
 targetSdk = "36"
