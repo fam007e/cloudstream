@@ -44,7 +44,6 @@ import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 import com.github.rubensousa.previewseekbar.PreviewBar
 import com.github.rubensousa.previewseekbar.media3.PreviewTimeBar
 import com.lagradost.cloudstream3.CommonActivity.isInPIPMode
-import com.lagradost.cloudstream3.CommonActivity.playerEventListener
 import com.lagradost.cloudstream3.CommonActivity.screenWidth
 import com.lagradost.cloudstream3.CommonActivity.showToast
 import com.lagradost.cloudstream3.ErrorLoadingException
@@ -375,7 +374,8 @@ class PlayerView @JvmOverloads constructor(
             exoFfwdText?.text = context.getString(R.string.ffw_text_regular_format).format(seekSecs)
 
             playerPausePlay?.setOnClickListener {
-                if (currentPlayerStatus == CSPlayerLoading.IsEnded) {
+                scheduleAutoHide()
+                if (currentPlayerStatus == CSPlayerLoading.IsEnded && isLayout(PHONE)) {
                     player.handleEvent(CSPlayerEvent.Restart, PlayerEventSource.UI)
                 } else {
                     player.handleEvent(CSPlayerEvent.PlayPauseToggle, PlayerEventSource.UI)
@@ -466,7 +466,6 @@ class PlayerView @JvmOverloads constructor(
         player.releaseCallbacks()
         player = CS3IPlayer()
 
-        playerEventListener = null
         // keyEventListener is deregistered in onPause so that the incoming player's
         // onResume can register its own listener without racing against release().
 
