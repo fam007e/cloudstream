@@ -238,10 +238,12 @@ dependencies {
     // Android Core & Lifecycle
     implementation(libs.core.ktx)
     implementation(libs.activity.ktx)
+    implementation(libs.annotation)
     implementation(libs.appcompat)
     implementation(libs.fragment.ktx)
     implementation(libs.bundles.lifecycle)
     implementation(libs.bundles.navigation)
+    implementation(libs.kotlinx.collections.immutable)
 
     // Design & UI
     implementation(libs.preference.ktx)
