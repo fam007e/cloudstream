@@ -36,6 +36,7 @@ com.lagradost.cloudstream3.ui.setup
 com.lagradost.cloudstream3.ui.subtitles
 com.lagradost.cloudstream3.utils
 com.lagradost.cloudstream3.utils.downloader
+com.lagradost.cloudstream3.utils.serializers
 com.lagradost.cloudstream3.utils.videoskip
 com.lagradost.cloudstream3.widget
 module:Library
@@ -49,3 +50,4 @@ com.lagradost.cloudstream3.network
 com.lagradost.cloudstream3.plugins
 com.lagradost.cloudstream3.syncproviders
 com.lagradost.cloudstream3.utils
+com.lagradost.cloudstream3.utils.serializers
