@@ -53,6 +53,7 @@ jobs:
         PRERELEASE_STORE_FILE: ${{ runner.temp }}/keystore.jks
         SIMKL_CLIENT_ID: ${{ secrets.SIMKL_CLIENT_ID }}
         SIMKL_CLIENT_SECRET: ${{ secrets.SIMKL_CLIENT_SECRET }}
+        TRAKT_CLIENT_ID: ${{ secrets.TRAKT_CLIENT_ID }}
         MDL_API_KEY: ${{ secrets.MDL_API_KEY }}
 
     - name: Create pre-release
