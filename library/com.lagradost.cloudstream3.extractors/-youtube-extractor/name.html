@@ -42,9 +42,8 @@
         </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
-                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":library/androidMain">android</button>
                 <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":library/commonMain">common</button>
-                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":library/jvmMain">jvm</button>
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":library/jvmCommonMain">jvmCommon</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
                 <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
@@ -55,13 +54,6 @@
                     </div>
                         <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":library/androidMain" data-filter=":library/androidMain">
-                                <span class="checkbox--icon"></span>
-                                android
-                            </label>
-                        </li>
-                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
-                            <label class="checkbox">
                                 <input type="checkbox" class="checkbox--input" id=":library/commonMain" data-filter=":library/commonMain">
                                 <span class="checkbox--icon"></span>
                                 common
@@ -69,9 +61,9 @@
                         </li>
                         <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox--input" id=":library/jvmMain" data-filter=":library/jvmMain">
+                                <input type="checkbox" class="checkbox--input" id=":library/jvmCommonMain" data-filter=":library/jvmCommonMain">
                                 <span class="checkbox--icon"></span>
-                                jvm
+                                jvmCommon
                             </label>
                         </li>
                 </ul>
@@ -105,14 +97,14 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="member" id="content" pageids="Library::com.lagradost.cloudstream3.extractors/YoutubeExtractor/name/#/PointingToDeclaration//1581608226">
+<div class="main-content" data-page-type="member" id="content" pageids="Library::com.lagradost.cloudstream3.extractors/YoutubeExtractor/name/#/PointingToDeclaration//1388827762">
   <div class="breadcrumbs"><a href="../../index.html">Library</a><span class="delimiter">/</span><a href="../index.html">com.lagradost.cloudstream3.extractors</a><span class="delimiter">/</span><a href="index.html">YoutubeExtractor</a><span class="delimiter">/</span><span class="current">name</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>name</span></span></h1>
   </div>
   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
-    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":library/androidMain" data-filterable-set=":library/androidMain" data-active="" data-toggle=":library/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":library/commonMain" data-filterable-set=":library/commonMain" data-toggle=":library/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":library/jvmMain" data-filterable-set=":library/jvmMain" data-toggle=":library/jvmMain">jvm</button></div>
-<div class="content sourceset-dependent-content" data-togglable=":library/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="name.html">name</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="source-link-wrapper"><span class="source-link" data-element-type="source-link">(<a href="https://github.com/fam007e/cloudstream/tree/master/library/src/androidMain/kotlin/com/lagradost/cloudstream3/extractors/YoutubeExtractor.android.kt#L16">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":library/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="name.html">name</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="source-link-wrapper"><span class="source-link" data-element-type="source-link">(<a href="https://github.com/fam007e/cloudstream/tree/master/library/src/commonMain/kotlin/com/lagradost/cloudstream3/extractors/YoutubeExtractor.kt#L9">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":library/jvmMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="name.html">name</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="source-link-wrapper"><span class="source-link" data-element-type="source-link">(<a href="https://github.com/fam007e/cloudstream/tree/master/library/src/jvmMain/kotlin/com/lagradost/cloudstream3/extractors/YoutubeExtractor.jvm.kt#L16">source</a>)</span></span></div></div>  </div>
+    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":library/commonMain" data-filterable-set=":library/commonMain" data-active="" data-toggle=":library/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":library/jvmCommonMain" data-filterable-set=":library/jvmCommonMain" data-toggle=":library/jvmCommonMain">jvmCommon</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":library/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="name.html">name</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="source-link-wrapper"><span class="source-link" data-element-type="source-link">(<a href="https://github.com/fam007e/cloudstream/tree/master/library/src/commonMain/kotlin/com/lagradost/cloudstream3/extractors/YoutubeExtractor.kt#L9">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":library/jvmCommonMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="name.html">name</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="source-link-wrapper"><span class="source-link" data-element-type="source-link">(<a href="https://github.com/fam007e/cloudstream/tree/master/library/src/jvmCommonMain/kotlin/com/lagradost/cloudstream3/extractors/YoutubeExtractor.jvmCommon.kt#L16">source</a>)</span></span></div></div>  </div>
 </div>
     <div class="footer">
         <div class="footer--container">
